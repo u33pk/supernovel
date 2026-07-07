@@ -5,9 +5,11 @@ description: "Use when plot architecture is approved and you need detailed chapt
 
 # Chapter Outlining (5-Chapter Batches)
 
-Plan chapters in batches of 5. Each batch gets a batch plan before writing, and a batch review after writing. This prevents the model from "cutting corners" by catching repetitive patterns across chapters.
+Plan chapters in batches of 5. Batch planning happens within the **current volume** — each batch gets a batch plan before writing, and a batch review after writing. Each volume gets a volume summary upon completion.
 
-**Announce at start:** "I'm using the chapter-outlining skill to plan chapter outlines."
+**In volume mode:** Each volume is ~50 chapters (user-configurable), containing 10 five-chapter batches. Each volume has its own volume plan defined in plot-architecture. Batch outlines refine within that volume plan.
+
+**Announce at start:** "I'm using the chapter-outlining skill to plan Volume {V}, Batch {N}."
 
 <HARD-GATE>
 Do NOT invoke the drafting skill until at least the first batch of 5 chapters has been outlined and approved. Every scene must have a purpose.
@@ -21,9 +23,10 @@ Do NOT invoke the drafting skill until at least the first batch of 5 chapters ha
 
 ## Pre-Flight
 
-1. Read `story-bible.md` — especially Plot (turning points, chapter rough division), Characters, and World
+1. Read `story-bible.md` — especially Plot (planning mode, macro architecture, current volume main plot, chapter rough division), Characters, and World
 2. Read the chapter rough division from plot-architecture
-3. Calculate total batches: `ceil(total_chapters / 5)`
+3. Confirm current volume number and volume chapter range
+4. Calculate batches for current volume: `ceil(volume_chapters / 5)`
 
 ## The 5-Chapter Batch System
 
@@ -188,13 +191,13 @@ After outlining all 5 chapters in a batch, review:
 Save each chapter outline to:
 
 ```
-docs/supernovel/outlines/batch-N/chapter-NN-outline.md
+docs/supernovel/outlines/volume-N/batch-M/chapter-NN-outline.md
 ```
 
 Save the batch plan to:
 
 ```
-docs/supernovel/outlines/batch-N/batch-plan.md
+docs/supernovel/outlines/volume-N/batch-M/batch-plan.md
 ```
 
 ### Step 5: User Review
@@ -203,12 +206,12 @@ After each batch's outlines are complete, ask the user:
 
 > "Batch {N} (Chapters {X}-{Y}) outlines are complete. Please review. After confirmation, we can start the next batch or begin writing."
 
-## Meta-Planning: All Batches Overview
+## Volume-Level Overview
 
-After all batch plans are created (or after the first few batches), create an overview:
+After all batch plans for the current volume are created, create a volume overview:
 
 ```markdown
-# All Batches Overview
+# Volume N Batch Overview
 
 | Batch | Chapters | Focus | Key Events | Foreshadowing |
 |-------|----------|-------|------------|---------------|
@@ -216,11 +219,20 @@ After all batch plans are created (or after the first few batches), create an ov
 | 2 | 6-10 | | | |
 | ... | ... | | | |
 
-## Cross-Batch Foreshadowing Tracker
+## Intra-Volume Foreshadowing Tracker
 | Plant (Batch/Chapter) | Expected Payoff (Batch/Chapter) | Status |
 |----------------------|--------------------------------|--------|
 | | | |
 ```
+
+## After Volume Completion
+
+After all chapters in the current volume are written and reviewed:
+
+1. Write **volume summary** (more macro than batch summary)
+2. Update story-bible.md (macro architecture progress, master foreshadowing table)
+3. If volume-based and more volumes remain → return to `supernovel:plot-architecture` to plan next volume
+4. If final volume or one-shot mode → transition to `supernovel:finishing`
 
 ## Rules
 
@@ -243,7 +255,8 @@ After all batch plans are created (or after the first few batches), create an ov
 
 ## Integration
 
-**Previous skill:** supernovel:plot-architecture (provides structure and turning points)
+**Previous skill:** supernovel:plot-architecture (provides structure and turning points; volume mode provides current volume plan)
 **Next skill:** supernovel:drafting (writes chapters based on these outlines)
-**Updates:** story-bible.md (adds batch summaries after drafting)
-**Output:** docs/supernovel/outlines/batch-N/batch-plan.md + chapter-NN-outline.md
+**After volume:** supernovel:plot-architecture (volume mode: plan next volume)
+**Updates:** story-bible.md (adds batch summaries after drafting, volume summary after volume completion)
+**Output:** docs/supernovel/outlines/volume-N/batch-M/batch-plan.md + chapter-NN-outline.md

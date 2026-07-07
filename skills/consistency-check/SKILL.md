@@ -23,11 +23,12 @@ Level 1: Batch Review (every 5 chapters)
   → Detects within-batch repetition and inconsistencies
   → Updates story-bible.md
 
-Level 2: Meta-Review (every 5 batches = 25 chapters)
-  → Reviews all batch summaries together
-  → Detects cross-batch patterns and long-term drift
-  → Checks overall story arc progress
+Level 2: Meta-Review (at end of each volume / default every 25 chapters)
+  → Reviews all batch summaries in the current volume
+  → Detects cross-batch patterns and style drift
+  → Checks current volume's story arc progress
   → Verifies foreshadowing schedule
+  → Compares against macro architecture (volume mode)
 ```
 
 ---
@@ -169,11 +170,12 @@ If style drift is detected → mark as "Important" issue, needs recalibration in
 
 ---
 
-## Level 2: Meta-Review (Every 5 Batches / 25 Chapters)
+## Level 2: Meta-Review (At End of Each Volume)
 
 ### When to Trigger
 
-After every 5th batch summary is written. The meta-review compares all 5 batch summaries to detect long-term patterns.
+Triggered when all batches in the current volume are complete. In one-shot mode, trigger at fixed intervals (every 5 batches / 25 chapters).
+In volume mode, perform a meta-review of all batch summaries in the current volume at volume end.
 
 ### Meta-Review Checklist
 
@@ -230,23 +232,23 @@ Across 25 chapters:
 
 ### Meta-Review Output
 
-Save to: `docs/supernovel/meta-reviews/meta-review-N.md`
+Save to: `docs/supernovel/meta-reviews/volume-N-meta-review.md`
 
 ```markdown
 # Meta-Review [N]: Chapters [1]-[25]
 
 ## Story Arc Status
-[Is the overall story on track?]
+[Is the current volume on track? Deviation from macro architecture?]
 
 ## Repetition Patterns Detected
-[Any long-term patterns found]
+[Cross-batch patterns found]
 
 ## Foreshadowing Audit
-[Status of all planned plants/payoffs]
+[Status of foreshadowing in this volume]
 
 ## Character Arc Progress
-| Character | Arc Progress | On Track? | Notes |
-|-----------|-------------|-----------|-------|
+| Character | Volume Arc Progress | On Track? | Notes |
+|-----------|-------------------|-----------|-------|
 | | | | |
 
 ## Relationship Network Status (if applicable)
@@ -256,7 +258,7 @@ Save to: `docs/supernovel/meta-reviews/meta-review-N.md`
 [Power scaling assessment]
 
 ## Recommendations
-[What adjustments are needed for the next 25 chapters?]
+[What adjustments are needed for the next volume?]
 ```
 
 ---

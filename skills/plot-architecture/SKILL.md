@@ -27,16 +27,41 @@ Do NOT invoke chapter-outlining or any writing skill until the plot architecture
 
 ## Checklist
 
-1. **Read story-bible.md and concept** — understand characters, world, theme
-2. **Choose story structure** — recommend and get user choice
-3. **Plan main plot** — all major turning points, one by one with approval
-4. **Plan subplots** — each with theme, connection, and resolution
-5. **Plan relationship trajectories** — if `needs_relationship_map: true`
-6. **Chapter rough division** — pacing and rhythm plan
-7. **Self-review** — check for gaps, dead ends, broken arcs
-8. **Write to story-bible.md** — compile into Plot section
-9. **User review** — get approval before proceeding
-10. **Transition to chapter-outlining** — invoke `supernovel:chapter-outlining`
+1. **Read story-bible.md and concept** — understand characters, world, theme, estimated length
+2. **Choose planning mode** — one-shot or volume-based based on length
+3. **Choose story structure** — recommend and get user choice
+4. **Plan main plot** — turning points for current scope, one by one with approval
+5. **Plan subplots** — each with theme, connection, and resolution
+6. **Plan relationship trajectories** — if `needs_relationship_map: true`
+7. **Chapter rough division** — pacing and rhythm plan
+8. **Self-review** — check for gaps, dead ends, broken arcs
+9. **Write to story-bible.md** — compile into Plot section
+10. **User review** — get approval before proceeding
+11. **Transition to chapter-outlining** — invoke `supernovel:chapter-outlining`
+
+## Step 0: Choose Planning Mode
+
+Based on estimated length, recommend a planning mode. Use AskUserQuestion.
+
+| Mode | Scope | Approach |
+|------|-------|----------|
+| **One-shot** | Short (1-30k words) / Novelette (30-100k) / Novel (up to 30 chapters) | Plan all chapter structure and turning points at once |
+| **Volume-based** | Serialized (30+ chapters) / Web novels (hundreds of chapters) | Plan macro architecture + first volume only; subsequent volumes planned after previous volume completes |
+
+**Volume mode parameters:**
+- **Chapters per volume:** Default 50, user configurable (e.g., 30, 80, 100)
+- Use AskUserQuestion to confirm chapters per volume
+
+**Why volumes?**
+- Planning every detail of a 500+ chapter novel upfront is unrealistic; later chapters will inevitably deviate
+- Volumes allow adjusting direction based on what's already been written
+- Foreshadowing can be managed per-volume with independent plant/payoff rhythms
+- Character arcs can progress in stages, each volume having its own arc milestone
+
+**Key difference in volume mode:**
+- Steps 3-6 (main plot, subplots, relationships, chapter division) detail only the **current volume**
+- A **macro architecture** (see below) must define the overall trajectory across all volumes
+- After each volume completes, return to plot-architecture to plan the next volume
 
 ## Step 1: Choose Story Structure
 
@@ -53,7 +78,43 @@ Based on genre and concept, recommend a structure. Use AskUserQuestion.
 
 Let the user choose or propose a custom structure. Reference `structure-reference.md` for details on each.
 
+## Step 1.5: Macro Architecture (Volume mode only, skip in one-shot)
+
+**Only needed in volume mode.** One-shot mode proceeds directly to Step 2.
+
+The macro architecture defines the overall trajectory across all volumes, without chapter-level detail:
+
+```markdown
+## Macro Architecture
+
+### Full Story Summary
+[3-5 paragraphs describing the entire story from beginning to end]
+
+### Volume Plan
+| Volume | Est. Chapters | Core Conflict | Protagonist Arc Stage | Key Climax |
+|--------|--------------|---------------|----------------------|------------|
+| Vol 1 | 50 | [volume conflict] | [A → Intermediate 1] | [volume climax] |
+| Vol 2 | 50 | [volume conflict] | [Intermediate 1 → Intermediate 2] | [volume climax] |
+| ... | ... | ... | ... | ... |
+| Final | 50 | [final conflict] | [Intermediate N → B] | [full story climax] |
+
+### Master Foreshadowing Table
+| # | Foreshadowing | Planned Plant Volume | Planned Payoff Volume | Status |
+|---|--------------|---------------------|----------------------|--------|
+| | | | | |
+
+### Master Subplot Table
+| Subplot | Theme Served | Spans Volumes | Joins Main Plot At |
+|---------|-------------|---------------|-------------------|
+| | | | |
+```
+
+The macro architecture only needs user confirmation of the overall direction. Details are fleshed out volume by volume.
+
 ## Step 2: Plan Main Plot
+
+**One-shot mode:** Plan all major turning points for the entire story.
+**Volume mode:** Plan only the current volume's major turning points. The overall trajectory is defined in the macro architecture.
 
 Walk through each major turning point of the chosen structure. For EACH turning point:
 
@@ -110,7 +171,10 @@ Write these trajectories as a timeline that can be referenced during chapter-out
 
 ## Step 5: Chapter Rough Division
 
-Plan the pacing rhythm for the entire novel:
+**One-shot mode:** Plan the rhythm for the entire novel.
+**Volume mode:** Plan only the current volume's rhythm.
+
+Plan the pacing rhythm:
 
 1. Estimate total chapter count
 2. Assign each act/section its chapter range
@@ -147,9 +211,14 @@ After designing the complete plot:
 ```markdown
 ## Plot
 
+### Planning Mode: [One-shot / Volume-based]
+### Chapters Per Volume: [if applicable, default 50]
 ### Structure: [Chosen structure name]
 
-### Main Plot
+### Macro Architecture (Volume mode)
+[Macro architecture content, if applicable]
+
+### Current Volume Main Plot (Volume N)
 - **Opening Hook:** [Description]
 - **Inciting Event:** [Description]
 - **Act 1 Turning Point:** [Description]
@@ -166,9 +235,9 @@ After designing the complete plot:
 - **Resolution:** [How it ends]
 
 ### Foreshadowing Plan
-| # | What to Plant | Where (Chapter) | Payoff (Chapter) |
-|---|---------------|-----------------|------------------|
-| | | | |
+| # | What to Plant | Where (Chapter/Volume) | Payoff (Chapter/Volume) | Status |
+|---|---------------|----------------------|------------------------|--------|
+| | | | | |
 
 ### Relationship Trajectories (if applicable)
 [Timeline of relationship changes with triggering events]

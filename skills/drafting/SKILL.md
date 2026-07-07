@@ -109,7 +109,7 @@ Each chapter ending MUST follow the ending type specified in the chapter outline
 
 ### After Writing Each Chapter
 
-Save to: `docs/supernovel/drafts/chapter-NN.md`
+Save to: `docs/supernovel/drafts/volume-N/chapter-NN.md`
 
 Do NOT pause between chapters in a batch. Write all 5 chapters, then do the batch review.
 
@@ -185,11 +185,26 @@ Did I give any character too much/too little screen time?
 **Voice check:** Is each character's dialogue distinctive? Could Character A's lines be seamlessly given to Character B?]
 ```
 
-Save to: `docs/supernovel/batch-summaries/batch-N-summary.md`
+Save to: `docs/supernovel/batch-summaries/volume-N/batch-M-summary.md`
 
 ### Step 3: Invoke Consistency Check
 
 After completing the batch, invoke `supernovel:consistency-check` to review the batch.
+
+### Step 4: Volume Completion Check (Volume mode)
+
+If all batches in the current volume are complete:
+
+1. Write **volume summary**:
+   - Overall narrative arc review for this volume
+   - Foreshadowing payoff status for this volume
+   - Character arc progress in this volume
+   - Deviations from macro architecture (if any)
+   - Issues to address in the next volume
+2. Update story-bible.md's macro architecture progress
+3. Ask user whether to continue to the next volume
+
+Volume summary saved to: `docs/supernovel/volume-summaries/volume-N-summary.md`
 
 ## The TBD Resolution Rule
 
@@ -234,4 +249,4 @@ Never fill in a `[TBD]` without asking the user.
 **Next skill:** supernovel:consistency-check (reviews each batch)
 **Reads:** story-bible.md (everything), batch plans, chapter outlines, previous batch summaries
 **Updates:** story-bible.md (Stats, Inventory, Relationships, Chapter Summaries)
-**Output:** docs/supernovel/drafts/chapter-NN.md, docs/supernovel/batch-summaries/batch-N-summary.md
+**Output:** docs/supernovel/drafts/volume-N/chapter-NN.md, docs/supernovel/batch-summaries/volume-N/batch-M-summary.md, docs/supernovel/volume-summaries/volume-N-summary.md
