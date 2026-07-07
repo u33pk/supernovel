@@ -1,28 +1,31 @@
 # SuperNovel
 
-SuperNovel is an enforced novel-writing methodology for AI coding agents, built on the same plugin architecture as [Superpowers](https://github.com/obra/superpowers). It provides a structured workflow that forces AI agents to follow a disciplined novel creation process — from initial brainstorming through worldbuilding, character design, plot architecture, drafting, consistency checking, and revision.
+SuperNovel 是一个面向 AI 编程代理的强制小说写作方法论，基于 [Superpowers](https://github.com/obra/superpowers) 的插件架构构建。它提供了一套结构化工作流，强制 AI 代理遵循规范的小说创作流程——从头脑风暴到世界观构建、角色设计、情节架构、写作、一致性检查和修改。
 
-## How it works
+## 工作原理
 
-When your coding agent starts a session with SuperNovel installed, it doesn't just jump into writing prose. Instead, it steps back and guides you through a structured creative process:
+当你的编程代理在安装了 SuperNovel 的情况下启动会话时，它不会直接开始写散文，而是会引导你通过一套结构化的创作流程：
 
-1. **Brainstorming** — Explores your novel concept, themes, genre, and tone through collaborative dialogue
-2. **Worldbuilding** — Constructs the story's world layer by layer (geography, society, history, magic/tech systems)
-3. **Character Design** — Creates detailed character profiles with arcs, motivations, and relationships
-4. **Plot Architecture** — Designs the story structure (acts, turning points, main plot, subplots)
-5. **Chapter Outlining** — Produces detailed chapter-by-chapter outlines with scenes, POV, and foreshadowing
-6. **Drafting** — Writes chapters strictly following the outline, maintaining a Story Bible
-7. **Consistency Check** — Verifies every chapter against the Story Bible for character, world, and plot consistency
-8. **Revision** — Systematic editing for style, pacing, and quality
-9. **Finishing** — Final review and delivery options
+1. **头脑风暴** — 通过协作对话探索小说概念、主题、类型和基调
+2. **世界观构建** — 逐层构建故事世界（地理、社会、历史、力量体系）
+3. **角色设计** — 创建详细的角色档案，含弧光、动机和关系
+4. **情节架构** — 设计故事结构（幕、转折点、主线、副线）
+5. **章节大纲** — 以 5 章为一个批次产出详细的逐章大纲
+6. **写作** — 以 5 章批次写作，严格遵循大纲，每批后更新故事圣经
+7. **一致性检查** — 双层审查：批次审查（每 5 章）+ 元审查（每 25 章）
+8. **修改** — 系统性编辑，一次一个问题，修改后重新验证
+9. **统稿与交付** — 最终审校和交付选项
 
-The skills trigger automatically — you don't need to do anything special. Your coding agent just has SuperNovel.
+## 故事圣经
 
-## The Story Bible
+每个 SuperNovel 项目都维护一个 `story-bible.md`——所有故事元素的唯一真相来源。它追踪世界观设定、角色档案、情节线索、伏笔、时间线和风格指南。任何细节在写入故事圣经之前都不是"正式的"。
 
-Every SuperNovel project maintains a `story-bible.md` — the single source of truth for all story elements. It tracks world settings, character profiles, plot threads, foreshadowing, timeline, and style guidelines. No detail is "official" until it appears in the Story Bible.
+对于有数值系统的小说（游戏小说、修炼小说、系统小说），故事圣经还维护：
+- **角色属性** — 基础属性、修正值和变更日志
+- **背包与技能** — 装备、背包物品、已获能力及变更日志
+- **关系网络** — 关系矩阵、联盟追踪和变更日志
 
-## Installation
+## 安装
 
 ### Claude Code
 
@@ -36,34 +39,35 @@ Every SuperNovel project maintains a `story-bible.md` — the single source of t
 /plugins
 ```
 
-Go to `Marketplace` > `SuperNovel` and install it.
+进入 `市场` > `SuperNovel` 安装。
 
-Or install directly:
+或直接安装：
 
 ```text
 /plugins install https://github.com/supernovel/supernovel
 ```
 
-## Skills Library
+## 技能库
 
-- **using-supernovel** — Bootstrap skill that establishes the "check skills before acting" rule
-- **brainstorming** — Creative concept exploration with Socratic dialogue
-- **worldbuilding** — Layer-by-layer world construction
-- **character-design** — Detailed character profiles, arcs, and relationships
-- **plot-architecture** — Story structure, acts, main plot, and subplots
-- **chapter-outlining** — Detailed chapter-by-chapter outlines
-- **drafting** — Chapter writing with strict outline adherence
-- **consistency-check** — Story Bible verification after each chapter
-- **revision** — Systematic editing for style, pacing, and quality
-- **finishing** — Final review, formatting, and delivery
+- **using-supernovel** — Bootstrap 技能，建立"先查技能再行动"规则
+- **brainstorming** — 创意概念探索，苏格拉底式对话
+- **worldbuilding** — 逐层世界观构建（5 层）
+- **character-design** — 详细角色档案、弧光、关系、属性/背包初始化
+- **plot-architecture** — 故事结构、幕、主线、副线、关系轨迹
+- **chapter-outlining** — 5 章批次大纲，含结尾多样性规则
+- **drafting** — 5 章批次写作，严格遵循大纲，每批更新故事圣经
+- **consistency-check** — 双层审查：批次审查（重复检测、事实一致性）+ 元审查（长期模式检测、伏笔审计）
+- **revision** — 系统性编辑，一次一个问题
+- **finishing** — 最终审校、格式化和交付
 
-## Philosophy
+## 设计哲学
 
-- **Structure before prose** — Always plan before writing
-- **Consistency is king** — The Story Bible is the single source of truth
-- **Evidence over claims** — Verify against the Story Bible before proceeding
-- **Incremental validation** — Get approval at each stage before moving on
+- **先结构后写作** — 永远先规划再动笔
+- **一致性为王** — 故事圣经是唯一真相来源
+- **证据优于声明** — 对照故事圣经验证后再继续
+- **反偷懒** — 5 章批次制 + 重复检测，防止模型走捷径
+- **增量验证** — 每个阶段获得确认后再继续
 
-## License
+## 许可证
 
-MIT License - see LICENSE file for details
+MIT 许可证 - 详见 LICENSE 文件
