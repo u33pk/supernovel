@@ -109,7 +109,7 @@ description: "当章节大纲已批准，需要写作时使用——以 5 章为
 
 ### 写完每章后
 
-保存到：`docs/supernovel/drafts/chapter-NN.md`
+保存到：`docs/supernovel/drafts/volume-N/chapter-NN.md`
 
 不要在批次内章节间暂停。写完全部 5 章后再做批次审查。
 
@@ -184,11 +184,26 @@ description: "当章节大纲已批准，需要写作时使用——以 5 章为
 **角色声音自检：** 每个角色的对话是否独特？有没有"角色 A 说的话可以无缝安到角色 B 嘴里"的情况？]
 ```
 
-保存到：`docs/supernovel/batch-summaries/batch-N-summary.md`
+保存到：`docs/supernovel/batch-summaries/volume-N/batch-M-summary.md`
 
 ### 第 3 步：调用一致性检查
 
 批次完成后，调用 `supernovel:consistency-check` 审查批次。
+
+### 第 4 步：卷完成检查（分卷模式）
+
+如果当前卷的所有批次都已完成：
+
+1. 写**卷总结**：
+   - 本卷整体叙事弧线回顾
+   - 本卷伏笔回收情况
+   - 角色弧光在本卷的推进
+   - 与宏观架构的偏差（如有）
+   - 下一卷需要关注的问题
+2. 更新 story-bible.md 的宏观架构进度
+3. 询问用户是否继续下一卷
+
+卷总结保存到：`docs/supernovel/volume-summaries/volume-N-summary.md`
 
 ## [TBD] 解决规则
 
@@ -233,4 +248,4 @@ description: "当章节大纲已批准，需要写作时使用——以 5 章为
 **后续技能：** supernovel:consistency-check（审查每批）
 **读取：** story-bible.md（全部）、批次计划、章节大纲、之前的批次总结
 **更新：** story-bible.md（Stats、Inventory、Relationships、Chapter Summaries）
-**输出：** docs/supernovel/drafts/chapter-NN.md、docs/supernovel/batch-summaries/batch-N-summary.md
+**输出：** docs/supernovel/drafts/volume-N/chapter-NN.md、docs/supernovel/batch-summaries/volume-N/batch-M-summary.md、docs/supernovel/volume-summaries/volume-N-summary.md

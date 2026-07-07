@@ -5,9 +5,11 @@ description: "当情节架构已批准，需要详细章节大纲时使用。以
 
 # 章节大纲（5 章批次制）
 
-以 5 章为一个批次规划。每个批次在写作前有批次计划，写作后有批次审查。这能防止模型"偷懒"——通过跨章检测重复模式。
+以 5 章为一个批次规划。批次规划在**当前卷**内进行——每个批次在写作前有批次计划，写作后有批次审查。每卷完成后写卷总结。
 
-**开始时宣布：** "我正在使用 chapter-outlining 技能来规划章节大纲。"
+**分卷模式下：** 每卷约 50 章（用户可配置），包含 10 个 5 章批次。每卷有独立的卷计划，在 plot-architecture 中定义。批次大纲在卷计划的约束内细化。
+
+**开始时宣布：** "我正在使用 chapter-outlining 技能来规划第 {V} 卷第 {N} 批的大纲。"
 
 <HARD-GATE>
 在至少第一批 5 章的大纲被规划并批准之前，不得调用写作技能。每个场景都必须有存在的理由。
@@ -21,9 +23,10 @@ description: "当情节架构已批准，需要详细章节大纲时使用。以
 
 ## 预检
 
-1. 读取 `story-bible.md` —— 特别是情节（转折点、章节粗分）、角色和世界观
+1. 读取 `story-bible.md` —— 特别是情节（规划模式、宏观架构、当前卷主线、章节粗分）、角色和世界观
 2. 读取 plot-architecture 中的章节粗分
-3. 计算总批次数：`ceil(总章数 / 5)`
+3. 确认当前卷号和卷内章节范围
+4. 计算当前卷的批次数：`ceil(当前卷章数 / 5)`
 
 ## 5 章批次系统
 
@@ -182,13 +185,13 @@ description: "当情节架构已批准，需要详细章节大纲时使用。以
 每章大纲保存到：
 
 ```
-docs/supernovel/outlines/batch-N/chapter-NN-outline.md
+docs/supernovel/outlines/volume-N/batch-M/chapter-NN-outline.md
 ```
 
 批次计划保存到：
 
 ```
-docs/supernovel/outlines/batch-N/batch-plan.md
+docs/supernovel/outlines/volume-N/batch-M/batch-plan.md
 ```
 
 ### 第 5 步：用户审阅
@@ -197,12 +200,12 @@ docs/supernovel/outlines/batch-N/batch-plan.md
 
 > "第 {N} 批（第 {X}-{Y} 章）的大纲已完成，请审阅。确认后开始下一批，或开始写作。"
 
-## 全局概览
+## 卷级概览
 
-所有批次计划（或前几批）创建后，创建全局概览：
+当前卷所有批次计划创建后，创建卷级概览：
 
 ```markdown
-# 全部批次概览
+# 第 N 卷批次概览
 
 | 批次 | 章节 | 焦点 | 关键事件 | 伏笔 |
 |------|------|------|---------|------|
@@ -210,11 +213,20 @@ docs/supernovel/outlines/batch-N/batch-plan.md
 | 2 | 6-10 | | | |
 | ... | ... | | | |
 
-## 跨批次伏笔追踪
+## 卷内伏笔追踪
 | 埋设(批次/章节) | 预期回收(批次/章节) | 状态 |
 |----------------|-------------------|------|
 | | | |
 ```
+
+## 卷完成后
+
+当前卷所有章节写作和审查完成后：
+
+1. 写**卷总结**（比批次总结更宏观）
+2. 更新 story-bible.md（宏观架构进度、全书伏笔表状态）
+3. 如果是分卷模式且还有后续卷 → 回到 `supernovel:plot-architecture` 规划下一卷
+4. 如果是最后一卷或一次性模式 → 转入 `supernovel:finishing`
 
 ## 规则
 
@@ -237,7 +249,8 @@ docs/supernovel/outlines/batch-N/batch-plan.md
 
 ## 技能衔接
 
-**前置技能：** supernovel:plot-architecture（提供结构和转折点）
+**前置技能：** supernovel:plot-architecture（提供结构和转折点，分卷模式提供当前卷计划）
 **后续技能：** supernovel:drafting（根据这些大纲写作）
-**更新：** story-bible.md（写作后添加批次总结）
-**输出：** docs/supernovel/outlines/batch-N/batch-plan.md + chapter-NN-outline.md
+**卷完成后：** supernovel:plot-architecture（分卷模式下规划下一卷）
+**更新：** story-bible.md（写作后添加批次总结，卷完成后添加卷总结）
+**输出：** docs/supernovel/outlines/volume-N/batch-M/batch-plan.md + chapter-NN-outline.md
