@@ -1,0 +1,19 @@
+{
+  "name": "supernovel",
+  "description": "Enforced novel-writing methodology for coding agents: structured brainstorming, worldbuilding, character design, plot architecture, drafting, consistency checking, and revision workflows",
+  "version": "0.1.0",
+  "author": {
+    "name": "SuperNovel Contributors"
+  },
+  "homepage": "https://github.com/supernovel/supernovel",
+  "license": "MIT",
+  "keywords": [
+    "novel-writing",
+    "fiction",
+    "worldbuilding",
+    "character-design",
+    "plot-architecture",
+    "consistency-check",
+    "workflow"
+  ]
+}

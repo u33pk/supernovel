@@ -1,0 +1,36 @@
+{
+  "name": "supernovel",
+  "version": "0.1.0",
+  "description": "Enforced novel-writing methodology: structured brainstorming, worldbuilding, character design, plot architecture, drafting, consistency checking, and revision workflows.",
+  "author": {
+    "name": "SuperNovel Contributors"
+  },
+  "homepage": "https://github.com/supernovel/supernovel",
+  "license": "MIT",
+  "keywords": [
+    "novel-writing",
+    "fiction",
+    "worldbuilding",
+    "character-design",
+    "plot-architecture",
+    "consistency-check",
+    "workflow"
+  ],
+  "skills": "./skills/",
+  "sessionStart": {
+    "skill": "using-supernovel"
+  },
+  "skillInstructions": "Kimi Code tool mapping for SuperNovel skills:\n\n- When a SuperNovel skill says to ask the user, ask clarifying questions, ask one question at a time, present multiple-choice options, or wait for the user's choice, call Kimi Code's `AskUserQuestion` tool.\n- For `AskUserQuestion`, provide 1 question with 2-4 concrete options when possible. Put the recommended option first and suffix its label with `(Recommended)`.\n- When a SuperNovel skill refers to `TodoWrite`, use Kimi Code's `TodoList` tool.\n- When a SuperNovel skill says to dispatch a subagent, use Kimi Code's `Agent` tool.\n- For implementation, writing, and filled SuperNovel subagent prompt templates, call `Agent` with `subagent_type: \"coder\"`, paste the fully filled prompt into `prompt`, and provide a short `description`.\n- For read-only exploration that would take several searches, use `Agent` with `subagent_type: \"explore\"`.\n- When a SuperNovel skill refers to the `Skill` tool, use Kimi Code's native `Skill` tool.\n- Use Kimi Code's `Read`, `Write`, `Edit`, `Bash`, `Grep`, `Glob`, `FetchURL`, `WebSearch`, and MCP tools by their actual exposed names.",
+  "interface": {
+    "displayName": "SuperNovel",
+    "shortDescription": "Enforced novel-writing methodology for AI agents",
+    "longDescription": "Use SuperNovel to guide novel writing through structured brainstorming, worldbuilding, character design, plot architecture, chapter outlining, drafting with consistency checks, and systematic revision workflows.",
+    "developerName": "SuperNovel Contributors",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/supernovel/supernovel"
+  }
+}
