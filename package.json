@@ -1,0 +1,14 @@
+{
+  "name": "supernovel",
+  "version": "0.1.0",
+  "description": "Enforced novel-writing methodology for coding agents",
+  "type": "module",
+  "keywords": [
+    "novel-writing",
+    "fiction",
+    "worldbuilding",
+    "character-design",
+    "workflow"
+  ],
+  "license": "MIT"
+}
