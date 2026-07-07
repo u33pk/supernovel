@@ -65,16 +65,31 @@ NO PROSE WITHOUT READING THE STORY BIBLE AND BATCH PLAN FIRST.
 - If the outline feels wrong, STOP and ask the user — do not freelance
 
 **Style adherence (from story-bible.md Style section):**
+
+**Iron Law: The writing style MUST match the style defined in the story bible. If you notice style drift mid-batch, STOP and recalibrate.**
+
 - POV as specified (first/third limited/omniscient)
 - Tense as specified
-- Language style as specified
-- Dialogue style as specified
 - Description density as specified
 
+**Style consistency rules:**
+- **Sentence style:** If "Stark & Restrained" is chosen, don't suddenly produce ornate long sentences with elaborate metaphors; if "Ornate & Lush" is chosen, don't suddenly shift to telegraphic short bursts
+- **Vocabulary level:** Colloquial style uses short words and slang; literary style uses longer words and imagery. Don't mix
+- **Rhythm:** Sweeping Epic style alternates long and short sentences for impact; Gentle Narrative style maintains uniform sentence length for steady pace. Review the style definition at the start of each batch; self-check for drift at the end
+- **Narrative distance:** Stark style keeps distance from characters (less inner monologue); Healing style stays close to character interiority (more feelings). Don't shift between close and distant within the same batch
+- **Emotional expression:** Stark style implies emotion through action and environment; Ornate style directly describes emotional imagery. Once chosen, don't randomly switch
+
 **Character voice:**
-- Each character must speak and act according to their profile
-- Reference speech patterns from character profiles
+
+**Iron Law: Each character's dialogue must be identifiable without dialogue tags. This is not a suggestion — it's a hard requirement.**
+
+- Each character must speak according to their defined speech pattern in their profile
+- Reference the example lines from the character profile (covering calm, angry, intimate, crisis states)
 - No character should "sound like" another character
+- The same character can vary across emotional states, but core traits (word choice habits, sentence length, catchphrases) stay consistent
+- If Character A's dialogue could be seamlessly given to Character B → character voice design has failed, STOP and recalibrate
+- Dialogue must not include catchphrases or signature expressions not defined in the character profile
+- Internal monologue and self-talk must also match the character's speech pattern — don't slip into the author's narration voice
 
 **Prose quality:**
 - Show, don't tell (for emotional moments)
@@ -165,7 +180,9 @@ Create a batch summary document:
 
 ## Writing Pattern Notes
 [Self-check: Did I repeat any patterns? Did I vary endings?
-Did I give any character too much/too little screen time?]
+Did I give any character too much/too little screen time?
+**Style check:** Is the writing style consistent with the story bible's Style section? Any drift toward "model default style"?
+**Voice check:** Is each character's dialogue distinctive? Could Character A's lines be seamlessly given to Character B?]
 ```
 
 Save to: `docs/supernovel/batch-summaries/batch-N-summary.md`
@@ -198,6 +215,9 @@ Never fill in a `[TBD]` without asking the user.
 - Filling in [TBD] items without asking the user
 - "Creatively" adding scenes not in the outline
 - Every chapter having the same paragraph structure
+- Writing style drifting to "model default" (suddenly ornate / suddenly colloquial)
+- Character dialogue that could be swapped between characters (A's lines work for B too)
+- Same character's speech varying too much across scenes (losing identifiability)
 
 ## Key Principles
 

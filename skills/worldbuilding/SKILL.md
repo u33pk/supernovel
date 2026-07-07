@@ -106,6 +106,19 @@ This is critical for system/game novels — inconsistent power systems break rea
 - Economic system (currency, trade)
 - Religion/belief systems (if relevant)
 
+**Writing Style (defined at the end of this layer):**
+
+The writing style is a binding constraint for the entire manuscript. It must be defined during worldbuilding. Based on the style chosen in brainstorming, refine it into enforceable rules:
+
+- Sentence style (short/long/alternating)
+- Vocabulary level (colloquial/literary/regional)
+- Narrative distance (close to character / observer / omniscient commentary)
+- Emotional expression (implied through action / direct description / imagery)
+- Description density (spare / moderate / lush)
+- Forbidden patterns (list writing techniques that must never appear in this style)
+
+These rules will be written into story-bible.md's Style section and enforced as hard constraints in drafting and consistency-check.
+
 ## Story Bible Structure
 
 After all layers are approved, write `story-bible.md`:
@@ -129,6 +142,9 @@ After all layers are approved, write `story-bible.md`:
 
 ### Culture & Daily Life
 [Layer 5 content]
+
+### Writing Style
+[Style rules defined at the end of Layer 5: sentence style, vocabulary, narrative distance, emotional expression, description density, forbidden patterns]
 
 ### [TBD] Items
 - [List of unresolved details that need decisions later]

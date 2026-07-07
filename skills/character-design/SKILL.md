@@ -52,7 +52,7 @@ Design the protagonist in detail. Present each attribute for user confirmation:
 - **Core Desire:** What do they want more than anything?
 - **Core Fear:** What are they most afraid of? (Often the mirror of their desire)
 - **Character Arc:** Story Start State (A) → Story End State (B). What fundamental change do they undergo?
-- **Speech Pattern:** A distinctive way of speaking or behaving that lets readers identify them without dialogue tags. Give an example line.
+- **Speech Pattern:** A distinctive way of speaking or behaving that lets readers identify them without dialogue tags. You MUST provide **at least 3 example lines** covering different emotional states (e.g., angry, calm, intimate, crisis). If the character's voice changes during the story (e.g., refined early on, crude later), describe the change point and reason.
 - **Fatal Flaw Consequence:** How does their flaw cause problems in the story?
 
 Use AskUserQuestion for each major attribute. One question at a time.
@@ -159,7 +159,12 @@ After all characters are approved, write them into story-bible.md:
 - **Core Desire:** [What they want]
 - **Core Fear:** [What they dread]
 - **Arc:** [A state] → [B state]
-- **Speech Pattern:** [Distinctive way of speaking, example line]
+- **Speech Pattern:** [Distinctive way of speaking + at least 3 example lines covering different emotions]
+  - Calm: "[example]"
+  - Angry: "[example]"
+  - Intimate/relaxed: "[example]"
+  - Crisis: "[example]"
+  - Catchphrase/signature expression: "[if any]"
 - **Story Function:** [For supporting characters]
 - **Key Relationships:** [Who and how]
 

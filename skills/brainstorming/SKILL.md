@@ -42,11 +42,26 @@ Key questions to cover (spread across multiple messages, never dump all at once)
 - **Target audience:** Young adult / Adult / General / Niche community?
 - **Length:** Short (1-30k words) / Novelette (30-100k) / Novel (100k+) / Serialized?
 - **Core inspiration:** Any core idea, image, or inspiration? Summarize in one sentence.
+- **Overall writing style:** What narrative style do you prefer? (See style reference table below)
 - **Numeric elements:** Does it involve numerical systems (levels/attributes/equipment/skill trees)?
 - **Combat/action:** Are there combat/action scenes?
 - **Complex relationships:** Are interpersonal dynamics complex (multi-romance / faction rivalry / alliance and betrayal)?
 
 The last three questions determine which `story-bible.md` modules will be needed later. Flag the answers for `character-design`.
+
+**Writing Style Reference Table (for multiple choice):**
+
+| Style | Characteristics | Typical Examples |
+|-------|----------------|-----------------|
+| **Sweeping Epic** | Grand scale, powerful rhythm, strong long/short sentence contrast | Jin Yong wuxia, epic fantasy |
+| **Gentle Narrative** | Leisurely pace, attention to daily details, emotional buildup | Light novels, healing fiction |
+| **Manic & Fierce** | Extremely fast pace, razor-sharp language, vivid imagery, unpredictable | Hot-blooded manga adaptations |
+| **Stark & Restrained** | Concise precision, minimal adjectives, restrained emotion, lots of white space | Hemingway, hardboiled detective |
+| **Ornate & Lush** | Rich vocabulary, dense imagery, long sentences, detailed descriptions | Gothic fiction, literary romance |
+| **Colloquial/Street** | Dialogue-heavy, dialect, casual, relaxed rhythm | Urban comedy, slice-of-life |
+| **Poetic & Ethereal** | Imagery-driven,散文 rhythm, emotion-first, weakened plot | Literary fiction, mood pieces |
+
+Users can say "write like [author/book]" or choose a combination. This style choice will be written into story-bible.md's Style section as a binding constraint for the entire manuscript.
 
 ### Step 2: Explore Themes and Core Conflict
 
@@ -78,10 +93,11 @@ Expand the chosen direction into a concept design. Present it **section by secti
 
 1. **Story Synopsis** (3-5 sentences)
 2. **Core Selling Points** (what makes readers pick this up)
-3. **World Direction** (not details — just the flavor: modern urban / ancient China / space opera / game world / etc.)
-4. **Character Direction** (protagonist is who, faces what — no full profiles yet)
-5. **Plot Direction** (general trajectory — not structure yet)
-6. **Unique Elements** (any special systems, mechanics, or narrative devices)
+3. **Writing Style** (chosen style + why it fits this story)
+4. **World Direction** (not details — just the flavor: modern urban / ancient China / space opera / game world / etc.)
+5. **Character Direction** (protagonist is who, faces what — no full profiles yet)
+6. **Plot Direction** (general trajectory — not structure yet)
+7. **Unique Elements** (any special systems, mechanics, or narrative devices)
 
 Ask after each section: "Does this direction look right? Anything to adjust?"
 
@@ -96,6 +112,7 @@ docs/supernovel/concepts/YYYY-MM-DD-<topic>-concept.md
 The document should contain all approved sections from Step 4, plus:
 - Genre and audience
 - Estimated length
+- Chosen writing style and rationale
 - Flags for which `story-bible.md` modules will be needed:
   - `needs_stats: true/false` (numerical systems)
   - `needs_inventory: true/false` (items/equipment/skills tracking)

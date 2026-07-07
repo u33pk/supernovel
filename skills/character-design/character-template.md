@@ -12,7 +12,13 @@
 - **Core Desire:** [What they want above all else]
 - **Core Fear:** [What they dread most — often the mirror of their desire]
 - **Arc:** [Start State] → [End State] — [What fundamental change]
-- **Speech Pattern:** [How they talk, a distinctive verbal habit]; Example: "[sample line]"
+- **Speech Pattern:** [How they talk, a distinctive verbal habit]
+  - Calm: "[example line]"
+  - Angry: "[example line]"
+  - Intimate/relaxed: "[example line]"
+  - Crisis: "[example line]"
+  - Catchphrase/signature expression: "[if any]"
+  - Voice change: [if voice changes during the story, describe when and why]
 - **Story Function:** [For supporting characters: Mentor / Catalyst / Mirror / Contrast / Lever / Witness]
 - **Key Relationships:**
   - [Character B]: [relationship type, current status]

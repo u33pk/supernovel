@@ -71,6 +71,19 @@ Not all sections are required — include only what the story needs.
 - **Language Notes:** [If relevant]
 - **Daily Life:** [How ordinary people live]
 
+### Writing Style
+
+> This section is defined during worldbuilding and enforced as a hard constraint in drafting and review.
+
+- **Chosen Style:** [e.g., Stark & Restrained / Gentle Narrative / Sweeping Epic, etc.]
+- **Style Reference:** [Author or work to emulate, e.g., "Hemingway's The Old Man and the Sea"]
+- **Sentence Style:** [e.g., Short sentences dominant, long/short alternation for rhythm / Uniform medium-long, steady pace]
+- **Vocabulary Level:** [e.g., Colloquial short words / Literary / Regional dialect]
+- **Narrative Distance:** [e.g., Close to character interiority / Observer distance / Omniscient commentary]
+- **Emotional Expression:** [e.g., Implied through action and environment / Direct inner description / Imagery-based]
+- **Description Density:** [e.g., Sparse / Moderate / Lush and detailed]
+- **Forbidden Patterns:** [e.g., No "couldn't help but", no summarizing paragraph endings, no direct emotion statements]
+
 ### [TBD] Items
 <!-- Unresolved details to be decided later -->
 

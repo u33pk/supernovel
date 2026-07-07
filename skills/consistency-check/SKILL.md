@@ -91,6 +91,8 @@ This is CRITICAL. Check for patterns the model repeats when "lazy":
 | POV character | | | | | | |
 | Dominant emotion | | | | | | |
 | Dialogue ratio | | | | | | |
+| Style consistency | | | | | | |
+| Character voice identifiability | | | | | | |
 
 Fill in this table. If any row shows repetition → flag as issue.
 
@@ -105,20 +107,44 @@ Compare drafted chapters against the batch plan:
 #### 4. Character Consistency
 
 For each character that appears in this batch:
-- **Voice:** Does their dialogue match their speech pattern from the profile?
+- **Voice:** Does their dialogue match their speech pattern from the profile? Does it reference at least the tone of the 3+ example lines?
 - **Behavior:** Do their actions match their personality traits?
 - **Arc:** Is their development progressing as planned?
 - **Knowledge:** Do they only know what they should know at this point?
 - **Abilities:** Do they only use abilities they actually have?
 
-#### 5. Stats/Inventory Accuracy (if applicable)
+**Character voice deep check:**
+- Remove dialogue tags — can you still tell who is speaking by their speech pattern alone? If not → voice not distinctive enough
+- Within this batch, is the same character's speech consistent across scenes? If too much variation → voice unstable
+- Could Character A's dialogue be seamlessly given to Character B? If yes → voice design failed, mark as "Important"
+
+#### 5. Writing Style Consistency
+
+Check all 5 chapters in this batch against story-bible.md's Style section:
+
+**Style drift detection:**
+- Do sentence patterns match the chosen style? (Stark style suddenly producing ornate parallelism = drift)
+- Is vocabulary level consistent? (Colloquial style suddenly using literary words = drift)
+- Is narrative distance consistent? (Close to character suddenly becoming omniscient narrator = drift)
+- Is emotional expression method consistent? (Action-implied suddenly becoming direct emotional statement = drift)
+- Is description density consistent with definition? (Spare style but paragraphs of environment description = drift)
+
+**Style regression detection (model default style fallback):**
+- Are typical "AI-flavored" phrases appearing? ("couldn't help but", "slowly", "corners of the mouth slightly raised" appearing frequently)
+- Does every paragraph end with a summarizing sentence?
+- Are emotional descriptions too on-the-nose ("He felt a wave of sadness" instead of implying through behavior)?
+- Is description density identical across all scenes (no variation in detail level)?
+
+If style drift is detected → mark as "Important" issue, needs recalibration in revision
+
+#### 6. Stats/Inventory Accuracy (if applicable)
 
 - Every stat change event → verify the math is correct
 - Every equipment change → verify old item removed, new item added
 - Every skill use → verify the character actually has that skill at that level
 - Battle outcomes → verify they make sense given the numbers
 
-#### 6. Relationship Consistency (if applicable)
+#### 7. Relationship Consistency (if applicable)
 
 - Character A's attitude toward Character B must match their current relationship status
 - If a betrayal hasn't happened yet, characters can't act like it has
@@ -167,6 +193,8 @@ Across 25 chapters, check:
 - **Conflict type:** Has every chapter had the same type of conflict?
 - **Emotional range:** Has the emotional palette been too narrow?
 - **Sentence style drift:** Has the writing style degraded or become monotone?
+- **Style drift:** Has the overall style deviated from the story bible's defined style? Has it quietly regressed toward "model default style"?
+- **Character voice drift:** Are character voices still distinctive across batches? Has cross-batch convergence occurred (all characters starting to sound alike)?
 
 #### 3. Foreshadowing Audit
 
